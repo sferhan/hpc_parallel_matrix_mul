@@ -111,7 +111,7 @@ int main(int argc, char** argv)
         double elapsed_seconds = elapsed.count();
         
         uint64_t n_= n;
-        uint64_t n_bytes = n * 6; // n double size integers
+        uint64_t n_bytes = n * 8; // n double size integers
         double mflops = ((2*(n_*n_)) / elapsed_seconds) / 1e6;
         double mem_bandwidth = (((2*(n_bytes*n_bytes)) + (2*(n_bytes))) / elapsed_seconds) / 219902325555;
 
