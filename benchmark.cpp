@@ -111,9 +111,8 @@ int main(int argc, char** argv)
         double elapsed_seconds = elapsed.count();
         
         uint64_t n_= n;
-        uint64_t n_bytes = n * 8; // n double size integers
         double mflops = ((2*(n_*n_)) / elapsed_seconds) / 1e6;
-        double mem_bandwidth = (((2*(n_bytes*n_bytes)) + (2*(n_bytes))) / elapsed_seconds) / 219902325555;
+        double mem_bandwidth = ( (((2*(n_*n_)) + (2*(n_))) * 8) / elapsed_seconds) / 219902325555;
 
         std::cout<<" FLOP/s ="<<mflops<<std::endl;
         std::cout<<" % Mem bandwidth util ="<<mem_bandwidth<<std::endl;
