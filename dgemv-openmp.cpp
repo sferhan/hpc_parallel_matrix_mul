@@ -27,7 +27,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // and you will want to comment out the above parallel code block that prints out
    // nthreads and thread_id so as to not taint your timings
 
-   #pragma openmp parallel for collapse(2)
+   #pragma openmp parallel for
    for(int i=0; i<n; i++) {
       for(int j=0; j<n; j++) {
          y[col_major_transform(i, 0, 1)] += (A[col_major_transform(i, j, n)] * x[col_major_transform(j, 0, 1)]);
