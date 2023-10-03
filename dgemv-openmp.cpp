@@ -27,7 +27,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // and you will want to comment out the above parallel code block that prints out
    // nthreads and thread_id so as to not taint your timings
 
-   #pragma openmp parallel for
+   #pragma omp parallel for
    for(int i=0; i<n; i++) {
       int start_of_row = i * n;
       double val_for_yi = 0;
